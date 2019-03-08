@@ -9,8 +9,11 @@
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::GET('test', 'ProcessPaymentController@processPayment');
+Route::POST('procesar/pago', 'InitPaymentController@makePayment')->name('process.makePayment');
