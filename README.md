@@ -1,2 +1,2 @@
-# prueba-tecnica
-Proyecto de consumir web service
+# prueba-tecnica placetopay
+Proyecto de consumir web service a placetopay
