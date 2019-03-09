@@ -15,5 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::GET('test', 'ProcessPaymentController@processPayment');
-Route::POST('procesar/pago', 'InitPaymentController@makePayment')->name('process.makePayment');
+Route::POST('procesar/pago', 'InitPaymentController@makePayment');

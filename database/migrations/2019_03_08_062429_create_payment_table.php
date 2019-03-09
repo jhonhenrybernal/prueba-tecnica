@@ -17,7 +17,6 @@ class CreatePaymentTable extends Migration
             $table->bigIncrements('id');
             $table->text('reference');
             $table->text('description');
-            $table->longText('amount');
             $table->text('currency');
             $table->text('total');
             $table->integer('id_client');

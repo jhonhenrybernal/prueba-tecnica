@@ -13,7 +13,7 @@ class Controller extends BaseController
 
     public function paymentRest()
     {
-        return new InitPaymentController();
+        return new ProcessPaymentController();
     }
 
 }

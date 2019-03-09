@@ -42,5 +42,4 @@ class Authentication extends Model
 
         ));
     }
-
 }

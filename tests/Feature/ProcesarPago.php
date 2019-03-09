@@ -4,21 +4,17 @@ namespace Tests\Feature;
 
 use Tests\TestCase;
 
-class ExampleTest extends TestCase
+class ProcesarPago extends TestCase
 {
-    /**
-     * A basic test example.
-     *
-     * @return void
-     */
-    public function testBasicTest()
+
+    /** @test */
+    public function procesar()
     {
         $credentials = [
-            '_token'       => csrf_token(),
             "name"         => 'prueba bernal',
             "lastName"     => "bernalles",
             "documentType" => "CC",
-            "document"     => "8978686768",
+            "document"     => "",
             "surname"      => "jbernalres",
             "email"        => "bjbernal@mail.com",
             "address"      => "calle 12 # 12 -00",
@@ -29,11 +25,9 @@ class ExampleTest extends TestCase
 
         ];
 
-        $response = $this->json('POST', 'procesar/pago', $credentials);
-        $response
-            ->assertStatus(201)
-            ->assertExactJson([
-                'created' => true,
-            ]);
+        $response = $this->from('procesar/pago')->post('procesar/pago', $credentials);
+        $response->assertRedirect('procesar/pago')->assertSessionHasErrors([
+
+        ]);
     }
 }
